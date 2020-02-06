@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Урок 1. Отрабатываем клик на ячейки таблицы</title>
+	<style>
+		.greeny { background-color: #98FB98; }
+	</style>
+</head>
+
+<body>
+	<h1>Отрабатываем клик на ячейки таблицы</h1>
+	<table border="1" cellspacing="0" cellpadding="3">
+		<thead>
+			<tr>
+				<th>Первая колонка</th>
+				<th>Вторая</th>
+				<th>Третья</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>Что-нибудь напишем</td>
+				<td>Текст второй ячейки</td>
+				<td>И здесь пусть будет хоть какой-то текст</td>
+			</tr>
+		</tbody>
+	</table>
+	<script>
+		let tds = document.querySelectorAll('td');
+		tds.forEach(function(item)
+		{
+			item.onclick = function()
+			{
+				this.classList.toggle('greeny');
+			};
+		});
+	</script>
+</body>
+
+</html>
